@@ -7,7 +7,7 @@ class SideMenu extends StatelessWidget {
     return Container(
       height: double.infinity,
       width: 280.0,
-      color: Theme.of(context).primaryColor,
+      color: Theme.of(context).primaryColor, //ask_hemanth
       child: Column(
         children: [
           Row(
@@ -68,7 +68,7 @@ class _SideMenuIconTab extends StatelessWidget {
       title: Text(
         title,
         style: Theme.of(context).textTheme.bodyText1,
-        overflow: TextOverflow.ellipsis,
+        overflow: TextOverflow.ellipsis,  //https://stackoverflow.com/questions/44579918/flutter-wrap-text-on-overflow-like-insert-ellipsis-or-fade
       ),
       onTap: onTap,
     );
