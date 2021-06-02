@@ -23,11 +23,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="02c47989-8ccc-4bb9-8f9a-afba8f4f3b20" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Dart_SDK.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Flutter_Projects.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Flutter_Projects.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spotify/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/spotify/lib/main.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spotify/lib/widgets/side_menu.dart" beforeDir="false" afterPath="$PROJECT_DIR$/spotify/lib/widgets/side_menu.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -99,22 +96,22 @@
       <screen x="0" y="0" width="1280" height="688" />
     </state>
     <state x="421" y="99" key="FileChooserDialogImpl/0.0.1280.688@0.0.1280.688" timestamp="1622480502496" />
-    <state width="1237" height="166" key="GridCell.Tab.0.bottom" timestamp="1622482006482">
+    <state width="1237" height="166" key="GridCell.Tab.0.bottom" timestamp="1622570960175">
       <screen x="0" y="0" width="1280" height="688" />
     </state>
-    <state width="1237" height="166" key="GridCell.Tab.0.bottom/0.0.1280.688@0.0.1280.688" timestamp="1622482006482" />
-    <state width="1237" height="166" key="GridCell.Tab.0.center" timestamp="1622482006482">
+    <state width="1237" height="166" key="GridCell.Tab.0.bottom/0.0.1280.688@0.0.1280.688" timestamp="1622570960175" />
+    <state width="1237" height="166" key="GridCell.Tab.0.center" timestamp="1622570960175">
       <screen x="0" y="0" width="1280" height="688" />
     </state>
-    <state width="1237" height="166" key="GridCell.Tab.0.center/0.0.1280.688@0.0.1280.688" timestamp="1622482006482" />
-    <state width="1237" height="166" key="GridCell.Tab.0.left" timestamp="1622482006482">
+    <state width="1237" height="166" key="GridCell.Tab.0.center/0.0.1280.688@0.0.1280.688" timestamp="1622570960175" />
+    <state width="1237" height="166" key="GridCell.Tab.0.left" timestamp="1622570960175">
       <screen x="0" y="0" width="1280" height="688" />
     </state>
-    <state width="1237" height="166" key="GridCell.Tab.0.left/0.0.1280.688@0.0.1280.688" timestamp="1622482006482" />
-    <state width="1237" height="166" key="GridCell.Tab.0.right" timestamp="1622482006482">
+    <state width="1237" height="166" key="GridCell.Tab.0.left/0.0.1280.688@0.0.1280.688" timestamp="1622570960175" />
+    <state width="1237" height="166" key="GridCell.Tab.0.right" timestamp="1622570960175">
       <screen x="0" y="0" width="1280" height="688" />
     </state>
-    <state width="1237" height="166" key="GridCell.Tab.0.right/0.0.1280.688@0.0.1280.688" timestamp="1622482006482" />
+    <state width="1237" height="166" key="GridCell.Tab.0.right/0.0.1280.688@0.0.1280.688" timestamp="1622570960175" />
     <state x="142" y="0" key="SettingsEditor" timestamp="1622480518271">
       <screen x="0" y="0" width="1280" height="688" />
     </state>

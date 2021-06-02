@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_spotify_ui/data/data.dart';
+import 'package:provider/provider.dart';
 
 class SideMenu extends StatelessWidget {
   @override
@@ -38,7 +39,7 @@ class SideMenu extends StatelessWidget {
             onTap: () {},
           ),
           const SizedBox(height: 12.0),
-         _LibraryPlayLists(),
+          _LibraryPlayLists(),
         ],
       ),
     );
@@ -68,7 +69,8 @@ class _SideMenuIconTab extends StatelessWidget {
       title: Text(
         title,
         style: Theme.of(context).textTheme.bodyText1,
-        overflow: TextOverflow.ellipsis,  //https://stackoverflow.com/questions/44579918/flutter-wrap-text-on-overflow-like-insert-ellipsis-or-fade
+        overflow: TextOverflow
+            .ellipsis, //https://stackoverflow.com/questions/44579918/flutter-wrap-text-on-overflow-like-insert-ellipsis-or-fade
       ),
       onTap: onTap,
     );
@@ -81,55 +83,75 @@ class _LibraryPlayLists extends StatefulWidget {
 }
 
 class __LibraryPlayListsState extends State<_LibraryPlayLists> {
+  ScrollController? _scrollController; //? to make it nullable
+
   @override
+  void initState() {    //This method is called whenever a widget gets created
+    super.initState();
+    _scrollController = ScrollController();
+  }
+
+  @override
+  void dispose() {     //This method is called to remove an object(widget) is removed from the tree
+    _scrollController?.dispose();
+    super.dispose();
+  }
+
   Widget build(BuildContext context) {
     return Expanded(
+      child: Scrollbar(
+        isAlwaysShown: true,
+        controller: _scrollController,
         child: ListView(
-        padding: const EdgeInsets.symmetric(vertical : 12.0),
-        physics: const ClampingScrollPhysics(), //*
-        children: [
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
+            controller: _scrollController,
+            padding: const EdgeInsets.symmetric(vertical: 12.0),
+            physics: const ClampingScrollPhysics(), //*
             children: [
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal : 16.0, vertical : 8.0),
-                child: Text(
-                  "YOUR LIBRARY",
-                  style: Theme.of(context).textTheme.headline4,
-                  overflow: TextOverflow.ellipsis,
-                ),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 16.0, vertical: 8.0),
+                    child: Text(
+                      "YOUR LIBRARY",
+                      style: Theme.of(context).textTheme.headline4,
+                      overflow: TextOverflow.ellipsis,
+                    ),
+                  ),
+                  ...yourLibrary.map((e) => ListTile(
+                        dense: true,
+                        title: Text(e,
+                            style: Theme.of(context).textTheme.bodyText2,
+                            overflow: TextOverflow.ellipsis),
+                        onTap: () {},
+                      )),
+                ],
               ),
-              ...yourLibrary.map((e) => ListTile(
-                dense: true, 
-                title: Text(e,style: Theme.of(context).textTheme.bodyText2, overflow: TextOverflow.ellipsis),
-                onTap: () {},
-                )
-              ),
-            ],
-          ),
-          const SizedBox(height: 24.0),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal : 16.0, vertical : 8.0),
-                child: Text(
-                  "PLAYLISTS",
-                  style: Theme.of(context).textTheme.headline4,
-                  overflow: TextOverflow.ellipsis,
-                ),
-              ),
-              ...playlists.map((e) => ListTile(
-                dense: true, 
-                title: Text(e,style: Theme.of(context).textTheme.bodyText2, overflow: TextOverflow.ellipsis),
-                onTap: () {},
-                )
-              ),
-            ],
-          )
-        ]
+              const SizedBox(height: 24.0),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 16.0, vertical: 8.0),
+                    child: Text(
+                      "PLAYLISTS",
+                      style: Theme.of(context).textTheme.headline4,
+                      overflow: TextOverflow.ellipsis,
+                    ),
+                  ),
+                  ...playlists.map((e) => ListTile(
+                        dense: true,
+                        title: Text(e,
+                            style: Theme.of(context).textTheme.bodyText2,
+                            overflow: TextOverflow.ellipsis),
+                        onTap: () {},
+                      )),
+                ],
+              )
+            ]),
       ),
     );
   }
 }
-
