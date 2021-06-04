@@ -75,20 +75,12 @@ class Shell extends StatelessWidget {
           Expanded(
             child: Row(
               children: [
-                SideMenu(),
+                if (MediaQuery.of(context).size.width > 800) SideMenu(),
                 Expanded(child: PlaylistScreen(playlist: lofihiphopPlaylist))
-                // if (MediaQuery.of(context).size.width > 800) SideMenu(),
-                // const Expanded(
-                //   child: PlaylistScreen(playlist: lofihiphopPlaylist),
               ],
             ),
           ),
-          // CurrentTrack(),
-          Container( //currentplayer
-            height: 84.0,
-            width: double.infinity,
-            color: Colors.blue,
-          )
+          CurrentTrack(),
         ],
       ),
     );
