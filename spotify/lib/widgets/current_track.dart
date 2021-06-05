@@ -152,9 +152,16 @@ class _PlayerControl extends StatelessWidget {
   }
 }
 
-class _MoreControls extends StatelessWidget {
+class _MoreControls extends StatefulWidget {
   const _MoreControls({Key? key}) : super(key: key);
 
+  @override
+  __MoreControlsState createState() => __MoreControlsState();
+}
+
+class __MoreControlsState extends State<_MoreControls> {
+  double _value = 1;
+  final double thumbRadius = 8;
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -167,13 +174,26 @@ class _MoreControls extends StatelessWidget {
         Row(
           children: [
             IconButton(onPressed: () {}, icon: Icon(Icons.volume_up_outlined)),
-            Container(
-              height: 5,
-              width: 70,
-              decoration: BoxDecoration(
-                  color: Colors.grey[800],
-                  borderRadius: BorderRadius.circular(2.5)),
-            ),
+            // Container(
+            //   height: 5,
+            //   width: 70,
+            //   decoration: BoxDecoration(
+            //       color: Colors.grey[800],
+            //       borderRadius: BorderRadius.circular(2.5)),
+            // ),
+            Slider(  
+              value: _value.toDouble(),  
+              min: 1.0,  
+              max: 30.0,  
+              divisions: 30,
+              activeColor: Theme.of(context).accentColor,  
+              inactiveColor: Colors.grey[800],
+              onChanged: (double newValue) {  
+              setState(() {  
+                _value = newValue.round().toDouble();  
+              }
+              );
+              }),  
           ],
         ),
         IconButton(onPressed: () {}, icon: Icon(Icons.fullscreen_outlined)),
